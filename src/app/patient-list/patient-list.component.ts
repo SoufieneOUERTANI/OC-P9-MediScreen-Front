@@ -18,14 +18,21 @@ export class PatientListComponent implements OnInit {
     this.getPatients();
   }
 
-  private getPatients() {
+  private getPatients(): void {
     this.patientService.getPatientList().subscribe(data => {
       this.patients = data;
-    })
+    });
   }
 
   updatePatient(id: number) {
     this.router.navigate(['update-patient', id]);
+  }
+
+  deletePatient(id: number) {
+    this.patientService.deletePatient(id).subscribe(data => {
+      console.log(data);
+      this.getPatients();
+    });
   }
 
 }

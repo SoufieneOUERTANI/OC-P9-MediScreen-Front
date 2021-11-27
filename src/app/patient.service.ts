@@ -31,6 +31,11 @@ export class PatientService {
     return this.httpClient.put(`${this.baseURL}/${id}`, patient);
   }
 
+  deletePatient(id: number): Observable<Object> {
+    //console.log('patient : ' + patient);
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
+
 
 }
 

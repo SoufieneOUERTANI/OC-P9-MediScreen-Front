@@ -8,7 +8,7 @@
             <th>gender</th>
             <th>mainAdress</th>
             <th>phone</th>
-            <th>Actions</th>
+            <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -19,8 +19,9 @@
             <td>{{patient.gender}}</td>
             <td>{{patient.mainAdress}}</td>
             <td>{{patient.phone}}</td>
-            <td>
+            <td class="d-flex justify-content-around">
                 <button (click)="updatePatient(patient.patientId)" class="btn btn-info">Update</button>
+                <button (click)="deletePatient(patient.patientId)" class="btn btn-danger">Delete</button>
             </td>
         </tr>
     </tbody>
