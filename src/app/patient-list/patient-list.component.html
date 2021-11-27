@@ -20,6 +20,7 @@
             <td>{{patient.mainAdress}}</td>
             <td>{{patient.phone}}</td>
             <td class="d-flex justify-content-around">
+                <button (click)="viewPatient(patient.patientId)" class="btn btn-success">View</button>
                 <button (click)="updatePatient(patient.patientId)" class="btn btn-info">Update</button>
                 <button (click)="deletePatient(patient.patientId)" class="btn btn-danger">Delete</button>
             </td>

@@ -35,4 +35,8 @@ export class PatientListComponent implements OnInit {
     });
   }
 
+  viewPatient(id: number) {
+    this.router.navigate(['view-patient', id]);
+  }
+
 }
