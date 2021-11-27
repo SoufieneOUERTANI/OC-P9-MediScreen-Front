@@ -17,6 +17,11 @@ export class PatientService {
     return this.httpClient.get<GetPatientsPages>(`${this.baseURL}`).pipe(map(response => response._embedded.patients));
   }
 
+  createPatient(patient: Patient): Observable<Object> {
+    console.log('patient : ' + patient);
+    return this.httpClient.post(`${this.baseURL}`, patient);
+  }
+
 }
 
 interface GetPatientsPages {

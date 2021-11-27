@@ -1,0 +1,30 @@
+<h3>Add a patient</h3>
+<form (ngSubmit)="onSubmitCreation()">
+    <div class="form-group">
+        <label>FistName</label>
+        <input type="text" class="form-control" id="firstName" [(ngModel)]="patient.firstName" name="firstName">
+    </div>
+    <div class="form-group">
+        <label>lastName</label>
+        <input type="text" class="form-control" id="lastName" [(ngModel)]="patient.lastName" name="lastName">
+    </div>
+    <div class="form-group">
+        <label>birthday</label>
+        <input type="text" class="form-control" id="birthday" [(ngModel)]="patient.birthday" name="birthday">
+    </div>
+    <div class="form-group">
+        <label>gender</label>
+        <input type="text" class="form-control" id="gender" [(ngModel)]="patient.gender" name="gender">
+    </div>
+    <div class="form-group">
+        <label>mainAdress</label>
+        <input type="text" class="form-control" id="mainAdress" [(ngModel)]="patient.mainAdress" name="mainAdress">
+    </div>
+    <div class="form-group">
+        <label>phone</label>
+        <input type="text" class="form-control" id="phone" [(ngModel)]="patient.phone" name="phone">
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+
+</form>
