@@ -1,5 +1,5 @@
-<h3>Add a patient</h3>
-<form (ngSubmit)="onSubmitCreation()">
+<h3>Update a patient</h3>
+<form (ngSubmit)="onSubmitUpdate()">
     <div class="form-group">
         <label>FistName</label>
         <input type="text" class="form-control" id="firstName" [(ngModel)]="patient.firstName" name="firstName">
@@ -25,6 +25,6 @@
         <input type="text" class="form-control" id="phone" [(ngModel)]="patient.phone" name="phone">
     </div>
 
-    <button class="btn btn-success" type="submit">Add</button>
+    <button class="btn btn-success" type="submit">Update</button>
 
 </form>

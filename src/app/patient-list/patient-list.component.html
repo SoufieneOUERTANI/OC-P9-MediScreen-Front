@@ -8,6 +8,7 @@
             <th>gender</th>
             <th>mainAdress</th>
             <th>phone</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,9 @@
             <td>{{patient.gender}}</td>
             <td>{{patient.mainAdress}}</td>
             <td>{{patient.phone}}</td>
+            <td>
+                <button (click)="updatePatient(patient.patientId)" class="btn btn-info">Update</button>
+            </td>
         </tr>
     </tbody>
 </table>

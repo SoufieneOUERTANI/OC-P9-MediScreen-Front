@@ -18,9 +18,19 @@ export class PatientService {
   }
 
   createPatient(patient: Patient): Observable<Object> {
-    console.log('patient : ' + patient);
+    //console.log('patient : ' + patient);
     return this.httpClient.post(`${this.baseURL}`, patient);
   }
+
+  getPatientById(id: number): Observable<Patient> {
+    return this.httpClient.get<Patient>(`${this.baseURL}/${id}`);
+  }
+
+  updatePatient(id: number, patient: Patient): Observable<Object> {
+    //console.log('patient : ' + patient);
+    return this.httpClient.put(`${this.baseURL}/${id}`, patient);
+  }
+
 
 }
 
