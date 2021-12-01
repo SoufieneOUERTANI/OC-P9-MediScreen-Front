@@ -1,0 +1,19 @@
+<h2>Notes list</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>comment</th>
+            <th>updateDate</th>
+            <th>creationDate</th>
+            <th class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let note of patientNotes">
+            <td>{{note.comment}}</td>
+            <td>{{note.updateDate}}</td>
+            <td>{{note.creationDate}}</td>
+        </tr>
+    </tbody>
+</table>
