@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Note } from 'src/app/note';
 import { NoteService } from 'src/app/note.service';
 
@@ -14,18 +14,21 @@ export class PatientNotesListComponent implements OnInit {
 
   patientNotes!: Note[];
 
-  constructor(private noteService: NoteService, private activatedRoute: ActivatedRoute) { }
+  constructor(private noteService: NoteService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getPatientNotes();
   }
   getPatientNotes() {
     this.patientId = this.activatedRoute.snapshot.params['id'];
-    console.log('getPatientNotes/this.patientId : ' + this.patientId);
-    this.noteService.gePatienttNoteListById(this.patientId).subscribe(
-      data => { console.log('getPatientNotes/data : ' + data); this.patientNotes = data },
+    this.noteService.getPatienttNoteListById(this.patientId).subscribe(
+      data => { this.patientNotes = data },
       error => console.log(error)
     );
+  }
+
+  onSubmitNoteAdd() {
+    this.router.navigate(['create-patient-note', this.activatedRoute.snapshot.params['id']]);
   }
 
 }

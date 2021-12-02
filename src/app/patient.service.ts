@@ -18,7 +18,6 @@ export class PatientService {
   }
 
   createPatient(patient: Patient): Observable<Object> {
-    //console.log('patient : ' + patient);
     return this.httpClient.post(`${this.baseURL}`, patient);
   }
 
@@ -27,12 +26,10 @@ export class PatientService {
   }
 
   updatePatient(id: number, patient: Patient): Observable<Object> {
-    //console.log('patient : ' + patient);
     return this.httpClient.put(`${this.baseURL}/${id}`, patient);
   }
 
   deletePatient(id: number): Observable<Object> {
-    //console.log('patient : ' + patient);
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 

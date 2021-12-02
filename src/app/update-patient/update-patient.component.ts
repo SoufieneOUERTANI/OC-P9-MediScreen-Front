@@ -11,14 +11,12 @@ import { PatientService } from '../patient.service';
 })
 export class UpdatePatientComponent implements OnInit {
 
-  id!: number;
   patient: Patient = new Patient();
 
   constructor(private patientService: PatientService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.params['id'];
-    this.patientService.getPatientById(this.id).subscribe(
+    this.patientService.getPatientById(this.activatedRoute.snapshot.params['id']).subscribe(
       data => { this.patient = data },
       error => console.log(error)
     );
@@ -27,7 +25,6 @@ export class UpdatePatientComponent implements OnInit {
   updatePatient(): void {
     this.patientService.updatePatient(this.patient.patientId, this.patient).subscribe(
       data => {
-        console.log(data);
         this.goToPatientsList();
       },
       error => { console.log(error) }
@@ -38,7 +35,6 @@ export class UpdatePatientComponent implements OnInit {
   }
 
   onSubmitUpdate(): void {
-    console.log(this.patient);
     this.updatePatient();
   }
 

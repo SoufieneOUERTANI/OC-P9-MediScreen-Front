@@ -20,7 +20,6 @@ export class CreatePatientComponent implements OnInit {
   savePatient(): void {
     this.patientService.createPatient(this.patient).subscribe(
       data => {
-        console.log(data);
         this.goToPatientsList();
       },
       error => { console.log(error) }
@@ -31,7 +30,6 @@ export class CreatePatientComponent implements OnInit {
   }
 
   onSubmitCreation(): void {
-    console.log(this.patient);
     this.savePatient();
   }
 

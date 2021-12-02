@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { PatientNotesListComponent } from './patient-details/patient-notes-list/patient-notes-list.component';
+import { CreatePatientNoteComponent } from './patient-details/create-patient-note/create-patient-note.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PatientNotesListComponent } from './patient-details/patient-notes-list/
     CreatePatientComponent,
     UpdatePatientComponent,
     PatientDetailsComponent,
-    PatientNotesListComponent
+    PatientNotesListComponent,
+    CreatePatientNoteComponent
   ],
   imports: [
     BrowserModule,

@@ -30,7 +30,6 @@ export class PatientListComponent implements OnInit {
 
   deletePatient(id: number) {
     this.patientService.deletePatient(id).subscribe(data => {
-      console.log(data);
       this.getPatients();
     });
   }
