@@ -37,8 +37,9 @@ export class CreatePatientNoteComponent implements OnInit {
       else {
         this.patientNotes.unshift(this.note);
       }
-      this.noteService.createPatientNote(this.activatedRoute.snapshot.params['id'], this.patientNotes).subscribe(
+      this.noteService.savePatientNoteService(this.activatedRoute.snapshot.params['id'], this.patientNotes).subscribe(
         data => {
+          this.getPatientNotes();
           this.goToNoteList();
         },
         error => { console.log(error) }
@@ -47,8 +48,9 @@ export class CreatePatientNoteComponent implements OnInit {
   }
 
   goToNoteList() {
-    // window.location.reload();
-    this.router.navigate(['view-patient', this.activatedRoute.snapshot.params['id']]);
+    this.router.navigate(['view-patient', this.activatedRoute.snapshot.params['id']]).then(() => {
+      window.location.reload();
+    });
   }
 
 }

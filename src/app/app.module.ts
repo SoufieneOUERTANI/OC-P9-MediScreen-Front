@@ -10,7 +10,7 @@ import { UpdatePatientComponent } from './update-patient/update-patient.componen
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { PatientNotesListComponent } from './patient-details/patient-notes-list/patient-notes-list.component';
 import { CreatePatientNoteComponent } from './patient-details/create-patient-note/create-patient-note.component';
-
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,

@@ -9,7 +9,7 @@ import { Note } from './note';
 })
 export class NoteService {
 
-  private baseURL = "http://localhost:8080/notes"
+  private baseURL = "http://localhost:8082/notes"
 
   note!: Note;
   notes: Note[] = [];
@@ -22,7 +22,7 @@ export class NoteService {
     return this.httpClient.get<GetPatientNotes>(`${this.baseURL}/${patientId}`).pipe(map(response => response.commentList));
   }
 
-  createPatientNote(id: number, notes: Note[]): Observable<Note> {
+  savePatientNoteService(id: number, notes: Note[]): Observable<Note> {
     const postPatientNotes = <PostPatientNotes>{
       patientId: id,
       commentList: notes
