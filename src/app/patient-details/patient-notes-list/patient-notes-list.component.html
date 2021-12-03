@@ -1,5 +1,3 @@
-<h3>Notes list</h3>
-
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -8,7 +6,7 @@
     </ul>
 </nav>
 
-<!-- <app-create-patient-note></app-create-patient-note> -->
+<h3>Notes list</h3>
 
 <table class="table table-striped">
     <thead>
@@ -29,7 +27,7 @@
                 <!-- <button (click)="updatePatient(patient.patientId)" class="btn btn-info">Update</button>
                 <button (click)="deletePatient(patient.patientId)" class="btn btn-danger">Delete</button> -->
                 <button class="btn btn-info">Update</button>
-                <button class="btn btn-danger">Delete</button>
+                <button (click)="deletePatientNote(note)" class="btn btn-danger">Delete</button>
             </td>
 
         </tr>

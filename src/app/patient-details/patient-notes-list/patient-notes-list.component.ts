@@ -31,4 +31,17 @@ export class PatientNotesListComponent implements OnInit {
     this.router.navigate(['create-patient-note', this.activatedRoute.snapshot.params['id']]);
   }
 
+  deletePatientNote(note: Note) {
+    note.actionFlag = "X";
+    console.log("this.patientNotes.length : " + this.patientNotes.length);
+
+    this.patientNotes.forEach((element, index) => {
+      if (element.actionFlag == "X") this.patientNotes.splice(index, 1);
+    });
+    console.log("this.patientNotes.length : " + this.patientNotes.length);
+
+    this.noteService.savePatientNoteService(this.activatedRoute.snapshot.params['id'], this.patientNotes).subscribe(
+      data => { this.getPatientNotes(); }
+    );
+  }
 }
