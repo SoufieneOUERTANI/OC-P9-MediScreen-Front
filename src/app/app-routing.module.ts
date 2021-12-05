@@ -6,6 +6,7 @@ import { UpdatePatientComponent } from './update-patient/update-patient.componen
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { PatientNotesListComponent } from './patient-details/patient-notes-list/patient-notes-list.component';
 import { CreatePatientNoteComponent } from './patient-details/create-patient-note/create-patient-note.component';
+import { UpdatePatientNoteComponent } from './patient-details/update-patient-note/update-patient-note.component';
 
 const routes: Routes = [
   { path: 'patients', component: PatientListComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'view-patient/:id', component: PatientDetailsComponent },
   { path: 'notes/:id', component: PatientNotesListComponent },
   { path: 'create-patient-note/:id', component: CreatePatientNoteComponent },
+  { path: 'update-patient-note/:id/:index', component: UpdatePatientNoteComponent },
   { path: '', redirectTo: 'patients', pathMatch: 'full' }
 
 ];

@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let note of patientNotes">
+        <tr *ngFor="let note of patientNotes; let indexOfNote = index;">
             <td>{{note.comment}}</td>
             <!-- <td>{{note.updateDate}}</td>
             <td>{{note.creationDate}}</td> -->
@@ -26,7 +26,7 @@
             <td class="d-flex justify-content-around">
                 <!-- <button (click)="updatePatient(patient.patientId)" class="btn btn-info">Update</button>
                 <button (click)="deletePatient(patient.patientId)" class="btn btn-danger">Delete</button> -->
-                <button class="btn btn-info">Update</button>
+                <button (click)="updatePatientNote(indexOfNote)" class="btn btn-info">Update</button>
                 <button (click)="deletePatientNote(note)" class="btn btn-danger">Delete</button>
             </td>
 

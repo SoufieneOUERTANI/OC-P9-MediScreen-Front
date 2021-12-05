@@ -11,6 +11,7 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
 import { PatientNotesListComponent } from './patient-details/patient-notes-list/patient-notes-list.component';
 import { CreatePatientNoteComponent } from './patient-details/create-patient-note/create-patient-note.component';
 import { RouterModule } from '@angular/router';
+import { UpdatePatientNoteComponent } from './patient-details/update-patient-note/update-patient-note.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     UpdatePatientComponent,
     PatientDetailsComponent,
     PatientNotesListComponent,
-    CreatePatientNoteComponent
+    CreatePatientNoteComponent,
+    UpdatePatientNoteComponent
   ],
   imports: [
     BrowserModule,

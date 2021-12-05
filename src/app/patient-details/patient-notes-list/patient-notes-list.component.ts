@@ -44,4 +44,8 @@ export class PatientNotesListComponent implements OnInit {
       data => { this.getPatientNotes(); }
     );
   }
+
+  updatePatientNote(indexOfNote: number) {
+    this.router.navigate(['update-patient-note', this.activatedRoute.snapshot.params['id'], indexOfNote], { state: { data: this.patientNotes, index: indexOfNote } });
+  }
 }

@@ -1,0 +1,9 @@
+<h3>Update Patient Note</h3>
+<form (ngSubmit)="onSubmitUpdateComment()">
+    <div class="form-group row">
+        <textarea [(ngModel)]="note.comment" class="form-control" id="comment" rows="3" id="note" name="note">
+        </textarea>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+    <br>
+</form>
