@@ -12,16 +12,18 @@ const routes: Routes = [
   { path: 'patients', component: PatientListComponent },
   { path: 'create-patient', component: CreatePatientComponent },
   { path: 'update-patient/:id', component: UpdatePatientComponent },
-  { path: 'view-patient/:id', component: PatientDetailsComponent },
+  { path: 'details-patient/:id', component: PatientDetailsComponent },
   { path: 'notes/:id', component: PatientNotesListComponent },
   { path: 'create-patient-note/:id', component: CreatePatientNoteComponent },
-  { path: 'update-patient-note/:id/:index', component: UpdatePatientNoteComponent },
-  { path: '', redirectTo: 'patients', pathMatch: 'full' }
-
+  {
+    path: 'update-patient-note/:id/:index',
+    component: UpdatePatientNoteComponent,
+  },
+  { path: '', redirectTo: 'patients', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
