@@ -1,17 +1,25 @@
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a (click)="onSubmitNoteAdd()" routerLink="" routerLinkActive="active" class="nav-link">Add Comment</a>
-        </li>
-    </ul>
+    <div class="container">
+        <a (click)="onSubmitNoteAdd()" routerLink="" routerLinkActive="active" class="navbar-brand">Add
+            Note</a>
+        <div>
+            <ul class="navbar-nav ms-auto bg-primary navbar-dark">
+                <li class="nav-item">
+                    <a [routerLink]="['/patient-diabetes-risk-report',patientId]" routerLinkActive="active" class="nav-link active">Report Diabetes Risk</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
-<h3>Notes list</h3>
+<br>
+
+<!-- <h3>Notes list</h3> -->
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width:80%">comment</th>
+            <th style="width:80%">Note</th>
             <!-- <th>updateDate</th>
             <th>creationDate</th> -->
             <th class="text-center">Actions</th>
