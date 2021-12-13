@@ -17,11 +17,13 @@ export class PatientNotesListComponent implements OnInit {
   constructor(private noteService: NoteService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.patientId = this.activatedRoute.snapshot.params['id'];
+    console.log("this.patientId : "+this.patientId);
     this.getPatientNotes();
   }
   getPatientNotes() {
     this.patientId = this.activatedRoute.snapshot.params['id'];
-    this.noteService.getPatienttNoteListById(this.patientId).subscribe(
+    this.noteService.getPatientNotesListById(this.patientId).subscribe(
       data => { this.patientNotes = data },
       error => console.log(error)
     );

@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Note } from 'src/app/note';
@@ -33,7 +32,7 @@ export class UpdatePatientNoteComponent implements OnInit {
 
   getPatientNotes() {
     this.patientId = this.activatedRoute.snapshot.params['id'];
-    this.noteService.getPatienttNoteListById(this.patientId).subscribe(
+    this.noteService.getPatientNotesListById(this.patientId).subscribe(
       (data) => {
         this.patientNotes = data;
         console.log(

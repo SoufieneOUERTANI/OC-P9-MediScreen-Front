@@ -9,7 +9,7 @@ import { Note } from './note';
 })
 export class NoteService {
 
-  private baseURL = "http://localhost:8082/notes"
+  private NotesBaseURL = "http://localhost:8082/notes"
 
   note!: Note;
   notes: Note[] = [];
@@ -18,8 +18,8 @@ export class NoteService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPatienttNoteListById(patientId: number): Observable<Note[]> {
-    return this.httpClient.get<GetPatientNotes>(`${this.baseURL}/${patientId}`).pipe(map(response => response.commentList));
+  getPatientNotesListById(patientId: number): Observable<Note[]> {
+    return this.httpClient.get<GetPatientNotes>(`${this.NotesBaseURL}/${patientId}`).pipe(map(response => response.commentList));
   }
 
   savePatientNoteService(id: number, notes: Note[]): Observable<Note> {
@@ -27,7 +27,7 @@ export class NoteService {
       patientId: id,
       commentList: notes
     }
-    return this.httpClient.post<Note>(`${this.baseURL}`, postPatientNotes);
+    return this.httpClient.post<Note>(`${this.NotesBaseURL}`, postPatientNotes);
   }
 
 }

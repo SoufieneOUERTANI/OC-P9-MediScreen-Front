@@ -9,28 +9,28 @@ import { Patient } from './patient';
 })
 export class PatientService {
 
-  private baseURL = "http://localhost:8081/patients"
+  private PatientBaseURL = "http://localhost:8081/patients"
 
   constructor(private httpClient: HttpClient) { }
 
   getPatientList(): Observable<Patient[]> {
-    return this.httpClient.get<GetPatientsPages>(`${this.baseURL}`).pipe(map(response => response._embedded.patients));
+    return this.httpClient.get<GetPatientsPages>(`${this.PatientBaseURL}`).pipe(map(response => response._embedded.patients));
   }
 
   createPatient(patient: Patient): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL}`, patient);
+    return this.httpClient.post(`${this.PatientBaseURL}`, patient);
   }
 
   getPatientById(id: number): Observable<Patient> {
-    return this.httpClient.get<Patient>(`${this.baseURL}/${id}`);
+    return this.httpClient.get<Patient>(`${this.PatientBaseURL}/${id}`);
   }
 
   updatePatient(id: number, patient: Patient): Observable<Object> {
-    return this.httpClient.put(`${this.baseURL}/${id}`, patient);
+    return this.httpClient.put(`${this.PatientBaseURL}/${id}`, patient);
   }
 
   deletePatient(id: number): Observable<Object> {
-    return this.httpClient.delete(`${this.baseURL}/${id}`);
+    return this.httpClient.delete(`${this.PatientBaseURL}/${id}`);
   }
 
 

@@ -25,7 +25,7 @@ export class CreatePatientNoteComponent implements OnInit {
 
   getPatientNotes() {
     this.patientId = this.activatedRoute.snapshot.params['id'];
-    this.noteService.getPatienttNoteListById(this.patientId).subscribe(
+    this.noteService.getPatientNotesListById(this.patientId).subscribe(
       (data) => {
         this.patientNotes = data;
       },
