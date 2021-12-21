@@ -13,6 +13,7 @@ import { CreatePatientNoteComponent } from './patient-details/create-patient-not
 import { RouterModule } from '@angular/router';
 import { UpdatePatientNoteComponent } from './patient-details/update-patient-note/update-patient-note.component';
 import { PatientDiabetesRiskReportComponent } from './patient-diabetes-risk/patient-diabetes-risk-report/patient-diabetes-risk-report.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { PatientDiabetesRiskReportComponent } from './patient-diabetes-risk/pati
     PatientNotesListComponent,
     CreatePatientNoteComponent,
     UpdatePatientNoteComponent,
-    PatientDiabetesRiskReportComponent
+    PatientDiabetesRiskReportComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
