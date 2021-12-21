@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { UpdatePatientNoteComponent } from './patient-details/update-patient-note/update-patient-note.component';
 import { PatientDiabetesRiskReportComponent } from './patient-diabetes-risk/patient-diabetes-risk-report/patient-diabetes-risk-report.component';
 import { LoginComponent } from './components/login/login.component';
+import { LoginStatusComponent } from './components/login-status/login-status.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { LoginComponent } from './components/login/login.component';
     CreatePatientNoteComponent,
     UpdatePatientNoteComponent,
     PatientDiabetesRiskReportComponent,
-    LoginComponent
+    LoginComponent,
+    LoginStatusComponent
   ],
   imports: [
     BrowserModule,

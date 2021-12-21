@@ -6,3 +6,5 @@ ng g interface config/MyAppConfig
 npm install --save @okta/okta-auth-js
 
 ng g c components/login
+
+ng g c components/LoginStatus
