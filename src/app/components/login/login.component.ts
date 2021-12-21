@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     private oktaAuth: OktaAuth
   ) {
     this.oktaSignIn = new OktaSignIn({
-      logo: 'assets/images/logo.png',
+      logo: 'assets/images/logo_mediscreen.jpg',
       // features: {
       //   registration: true,
       // },
