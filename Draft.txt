@@ -2,3 +2,5 @@ npm install @okta/okta-signin-widget
 npm install @okta/okta-angular
 
 ng g interface config/MyAppConfig
+
+npm install --save @okta/okta-auth-js
