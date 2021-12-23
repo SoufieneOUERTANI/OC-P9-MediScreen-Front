@@ -8,26 +8,52 @@ import { PatientNotesListComponent } from './patient-details/patient-notes-list/
 import { CreatePatientNoteComponent } from './patient-details/create-patient-note/create-patient-note.component';
 import { UpdatePatientNoteComponent } from './patient-details/update-patient-note/update-patient-note.component';
 import { PatientDiabetesRiskReportComponent } from './patient-diabetes-risk/patient-diabetes-risk-report/patient-diabetes-risk-report.component';
-import { OktaCallbackComponent } from '@okta/okta-angular';
+import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'patients', component: PatientListComponent },
-  { path: 'create-patient', component: CreatePatientComponent },
-  { path: 'update-patient/:id', component: UpdatePatientComponent },
-  { path: 'details-patient/:id', component: PatientDetailsComponent },
-  { path: 'notes/:id', component: PatientNotesListComponent },
-  { path: 'create-patient-note/:id', component: CreatePatientNoteComponent },
+  {
+    path: 'patients',
+    component: PatientListComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
+    path: 'create-patient',
+    component: CreatePatientComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
+    path: 'update-patient/:id',
+    component: UpdatePatientComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
+    path: 'details-patient/:id',
+    component: PatientDetailsComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
+    path: 'notes/:id',
+    component: PatientNotesListComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
+    path: 'create-patient-note/:id',
+    component: CreatePatientNoteComponent,
+    canActivate: [OktaAuthGuard],
+  },
   {
     path: 'update-patient-note/:id/:index',
     component: UpdatePatientNoteComponent,
+    canActivate: [OktaAuthGuard],
   },
   {
     path: 'patient-diabetes-risk-report/:id',
     component: PatientDiabetesRiskReportComponent,
+    canActivate: [OktaAuthGuard],
   },
   { path: '', redirectTo: 'patients', pathMatch: 'full' },
 ];

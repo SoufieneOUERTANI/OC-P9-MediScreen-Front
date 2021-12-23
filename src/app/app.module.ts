@@ -22,7 +22,7 @@ import myAppConfig from './config/my-app-config';
 
 const oktaConfig = Object.assign(
   {
-    onAuthRequired: (injector: any) => {
+    onAuthRequired: (oktaAuth: any, injector: any) => {
       const router = injector.get(Router);
       router.navigate(['/login']);
     },
