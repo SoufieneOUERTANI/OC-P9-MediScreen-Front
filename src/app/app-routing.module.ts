@@ -8,8 +8,13 @@ import { PatientNotesListComponent } from './patient-details/patient-notes-list/
 import { CreatePatientNoteComponent } from './patient-details/create-patient-note/create-patient-note.component';
 import { UpdatePatientNoteComponent } from './patient-details/update-patient-note/update-patient-note.component';
 import { PatientDiabetesRiskReportComponent } from './patient-diabetes-risk/patient-diabetes-risk-report/patient-diabetes-risk-report.component';
+import { OktaCallbackComponent } from '@okta/okta-angular';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  { path: 'login/callback', component: OktaCallbackComponent },
+  { path: 'login', component: LoginComponent },
+
   { path: 'patients', component: PatientListComponent },
   { path: 'create-patient', component: CreatePatientComponent },
   { path: 'update-patient/:id', component: UpdatePatientComponent },
@@ -20,7 +25,10 @@ const routes: Routes = [
     path: 'update-patient-note/:id/:index',
     component: UpdatePatientNoteComponent,
   },
-  { path: 'patient-diabetes-risk-report/:id', component: PatientDiabetesRiskReportComponent },
+  {
+    path: 'patient-diabetes-risk-report/:id',
+    component: PatientDiabetesRiskReportComponent,
+  },
   { path: '', redirectTo: 'patients', pathMatch: 'full' },
 ];
 

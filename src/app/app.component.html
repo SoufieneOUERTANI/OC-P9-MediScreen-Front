@@ -1,18 +1,23 @@
 <div class="container">
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a routerLink="patients" routerLinkActive="active" class="nav-link">Patients List</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="create-patient" routerLinkActive="active" class="nav-link">Add Patient</a>
-            </li>
-        </ul>
+        <div class="navbar-collapse collapse w-100 order-1 dual-collapse2">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a routerLink="patients" routerLinkActive="active" class="nav-link">Patients List</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="create-patient" routerLinkActive="active" class="nav-link">Add Patient</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <app-login-status></app-login-status>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <div class="container">
-        <br><br><br>
-        <app-login-status></app-login-status>
-    </div>
     <div class="container">
         <br><br><br>
         <h1 class="text-center">Welcome to MediaScreen</h1>
@@ -24,7 +29,7 @@
 </div>
 
 <!-- <footer class="footer" style="height:30px">
-    <div class="container">
-        <span>Soufiene OUERTANI</span>
-    </div>
+<div class="container">
+    <span>Soufiene OUERTANI</span>
+</div>
 </footer> -->
